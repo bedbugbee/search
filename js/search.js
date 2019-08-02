@@ -42,7 +42,7 @@ function combinedScore(val, entry) {
 
 $("#input").on("change keyup paste", function(e) {
   let output = $("#output");
-  let val = $(this).val().trim();
+  let val = $(this).val().trim().toLowerCase();
   if (val.length == 0) {
     output.css("color", "#999");
     return;
