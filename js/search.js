@@ -7,7 +7,7 @@ function lower(s) {
 
 let start = Date.now();
 $.ajax({
-  url: "/data/restaurant_list.json",
+  url: "data/restaurant_list.json",
   success: function(result) {
     for (let [id, entry] of Object.entries(result)) {
       entry.ADR_TC = lower(entry.ADR_TC);
