@@ -15,6 +15,7 @@ $.ajax({
       data.set(id, entry);
     }
     $("#status").html("JSON loaded in " + (Date.now()-start) + "ms");
+    search();
   }
 });
 
@@ -42,10 +43,6 @@ function search() {
 
   let output = $("#output");
   let val = $("#input").val().trim().toLowerCase();
-  if (val.length == 0) {
-    output.css("color", "#999");
-    return;
-  }
 
   let results = [];
   let range = parseInt($('input[name="range"]:checked').val());
