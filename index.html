@@ -8,20 +8,48 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="anonymous"/>
+
+    <style type="text/css">
+      #mapid {
+        width: 300px;
+        height: 300px;
+        min-width: 100%;
+      }
+    </style>
     <title>Full text search demo</title>
   </head>
   <body>
     <div class="container">
-      <div class="row my-3" id="status">
-        Loading JSON...
-     </div>
-      <div class="row my-3">
-        <input type="text" id="input" placeholder="Type to search">
-     </div>
-     <div class="row my-3">
-        <ul class="list-group" id="output">
-        </ul>
-     </div>
+      <div class="row">
+        <div class="col-sm my-2">
+          <div id="mapid"></div>
+        </div>
+        <div class="col-sm m-2">
+          <div class="row">
+            <input class="col" type="text" id="input" placeholder="Search">
+            <div class="btn-group btn-group-sm btn-group-toggle ml-1 col" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="range" autocomplete="off" value="1000">1km
+              </label>
+              <label class="btn btn-secondary active">
+                <input type="radio" name="range" autocomplete="off" value="5000" checked>5km
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="range" autocomplete="off" value="99999999">All
+              </label>
+            </div>
+          </div>
+          <div class="row my-2">
+            <ul class="list-group col" id="output">
+            </ul>
+          </div>
+          <div class="row" id="status">
+              Loading JSON...
+            </div>
+          </div>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -29,6 +57,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin="anonymous"></script>
+    <!-- Our code -->
     <script src="js/search.js"></script>
   </body>
 </html>
