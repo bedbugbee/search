@@ -103,12 +103,16 @@ function search() {
 }
 
 let map = L.map('mapid').setView(CENTER, 13);
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYmVkYnVnYmVlIiwiYSI6ImNqeXV2eWd5bDBjb3ozbmwyMjFtbHB4dmkifQ.TXHX86TCZgyBukhOUbOrXA', {
-    attribution: '<a href="https://www.mapbox.com/about/maps/">&copy; Mapbox</a> | <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> | <a href="https://www.mapbox.com/map-feedback/">Improve this map</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoiYmVkYnVnYmVlIiwiYSI6ImNqeXV2eWd5bDBjb3ozbmwyMjFtbHB4dmkifQ.TXHX86TCZgyBukhOUbOrXA'
-}).addTo(map);
+
+// Add layers that we need to the map
+var streets = L.tileLayer.Unwired({key: "468ab6146813df", scheme: "streets"}).addTo(map);
+
+// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYmVkYnVnYmVlIiwiYSI6ImNqeXV2eWd5bDBjb3ozbmwyMjFtbHB4dmkifQ.TXHX86TCZgyBukhOUbOrXA', {
+//     attribution: '<a href="https://www.mapbox.com/about/maps/">&copy; Mapbox</a> | <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> | <a href="https://www.mapbox.com/map-feedback/">Improve this map</a>',
+//     maxZoom: 18,
+//     id: 'mapbox.streets',
+//     accessToken: 'pk.eyJ1IjoiYmVkYnVnYmVlIiwiYSI6ImNqeXV2eWd5bDBjb3ozbmwyMjFtbHB4dmkifQ.TXHX86TCZgyBukhOUbOrXA'
+// }).addTo(map);
 
 let myMarker = L.marker(CENTER, {
   icon: new L.Icon.Default({
